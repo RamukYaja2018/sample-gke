@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-deployment
+  labels:
+    app: my-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app-container
+        image: <YOUR_GCP_REGION>-docker.pkg.dev/<YOUR_PROJECT_ID>/<YOUR_ARTIFACT_REGISTRY_REPO_NAME>/my-app:latest # Placeholder - will be updated by GitHub Actions
+        ports:
+        - containerPort: 8080
