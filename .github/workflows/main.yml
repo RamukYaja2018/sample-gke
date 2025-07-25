@@ -72,4 +72,4 @@ jobs:
 
           # Optional: Verify deployment
           kubectl rollout status deployment/${DEPLOYMENT_NAME}
-          kubectl get service ${DEPLOYMENT_NAME}-service # Check your service name if different
+          kubectl get service my-app-service # Check your service name if different
